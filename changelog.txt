@@ -128,6 +128,7 @@ The notes for each release
 - Removed unnecessary line breaks from the AdminCP's Custom Pages tab
 - Fix issue where people could add each other as friends multiple times
 - Allow users to change their own passwords
+<<<<<<< HEAD
 - Allow iFrame frameBorder attribute on custom pages 
 - Add a new IP field which the Minecraft server query uses, to prevent looking up SRV records. Also allows support for virtual hosts
 - Gravatar support 
@@ -135,6 +136,15 @@ The notes for each release
 - Display when a user was last online on their profile 
 - Add forum breadcrumbs
 - Add forum search ability 
+=======
+- Allow iFrame frameBorder attribute on custom pages
+- Add a new IP field which the Minecraft server query uses, to prevent looking up SRV records. Also allows support for virtual hosts
+- Gravatar support
+- Display recently online users
+- Display when a user was last online on their profile
+- Add forum breadcrumbs
+- Add forum search ability
+>>>>>>> upstream/master
 - Allow border-style, border-width, height and width CSS attributes in custom pages
 - Fix images contributing to signature character limit
 - New updater
@@ -145,11 +155,19 @@ The notes for each release
 - Fix invalid token on creating a new private message
 - Fix "remember me" on signin not actually remembering the user
 - Prevent users navigating to /pages directory manually
+<<<<<<< HEAD
 - Remove unnecessary tr tag from the play page template 
 - Add Minecraft status module to forum 
 - Add better registration error messages 
 - Add reCAPTCHA secret key field to AdminCP 
 - Change method of checking to see if a Minecraft username is valid 
+=======
+- Remove unnecessary tr tag from the play page template
+- Add Minecraft status module to forum
+- Add better registration error messages
+- Add reCAPTCHA secret key field to AdminCP
+- Change method of checking to see if a Minecraft username is valid
+>>>>>>> upstream/master
 
 1.0.2
 - Update German translation (thanks to @manuelgu)
@@ -464,4 +482,89 @@ The notes for each release
 - Update admin Infractions link in user dropdown
 - Update invalid token handling during topic submission
 - Forum index and topic deletion fixes
+<<<<<<< HEAD
 - Add notice when registration is disabled
+=======
+- Add notice when registration is disabled
+
+1.0.17
+- Add Japanese translation
+- Update Chinese translation
+- Update Czech translation
+- Update Dutch translation
+- Update French translation
+- Update Norwegian translation
+- Update Portuguese translation
+- Update Slovak translation
+- Move AdminCP container location
+- More efficient way of using Options in .htaccess
+- Delete unused 1920x1080 background image
+- Fix AdvancedBan label issue
+- Display website name on 404 page title
+- Integrate Infractions tab into profile pages
+- Update Infractions addon for profile pages
+- Allow toggling name history on profile pages
+- Fix loading invalid addons
+- Add BugReport addon
+- Update help page
+- Update Superhero theme
+- Add temp warning AdvancedBan integration to Infractions addon
+- Update vote addon to allow for > 8 voting sites without visual glitches
+- Fix broken API popover in AdminCP
+- Add error messages to BanAppeal and BugReport addons
+- Add error messages to staff application module
+- Fix validate error on vote addon
+- Update nginx example configs
+- Update email headers
+- Add CraftingStore support to Donate addon
+- Fix incorrect UserCP follower count
+- Add example Donate addon cron command
+
+1.0.18
+- Update issue template and readme
+- Update Dutch translation
+- Update German translation
+- Update Japanese translation
+- Update Portuguese translation
+- Add secondary group
+- Swap place and colour of signin and register buttons
+- Fix grammar on homepage if 1 player is online
+- Add word-wrap to .forum_post
+- Apply .forum_post to homepage announcements
+- Update MinecraftMarket integration
+- Ensure route is =lowercase
+- Ensure UUID is never null
+- Update secondary groups
+
+1.0.19
+- Fix invalid API keys
+- Fix text overflow on donate package descriptions
+- Add htaccess files to core directory
+
+1.0.20
+- Add example web.config
+- Fix mcassoc instance key not saving
+- Add Italian translation
+- Update Czech, Dutch, Finnish, Japanese and Portuguese translations
+- Remove register follow location cURL option
+- Add scripts to AdminCP Help page
+- Change AdvancedBan table names to uppercase
+- Add Dutch translation to Ban Appeal addon
+- Optimise images
+- Remove mcrypt requirement
+- Update installer requirements
+- Add panels to forum templates
+- Add default order value for CraftingStore integration
+- Fix signin details being remembered if tfa is cancelled
+- Update 404 and forum maintenance mode back buttons to work on Safari
+- Automatically load addon languages
+
+1.0.21
+- Update Italian translation
+- Add basic user template variables
+- Use v4 API for CraftingStore
+- Remove MinecraftMarket integration
+- Ensure reputation user exists
+- Update DB class
+- Update htmlspecialchars calls
+>>>>>>> upstream/master

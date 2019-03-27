@@ -940,7 +940,11 @@ class Infractions {
 			$symbol = "<>";
 			$equals = "0";
 		}
+<<<<<<< HEAD
 		$punishments = $this->_db->get('punishmenthistory', array('uuid', $symbol, $equals))->results();
+=======
+		$punishments = $this->_db->get('PunishmentHistory', array('uuid', $symbol, $equals))->results();
+>>>>>>> upstream/master
 		
 		$results = array();
 		
@@ -1011,6 +1015,23 @@ class Infractions {
 						$ret["expires_human"] = '';
 					break;
 					
+<<<<<<< HEAD
+=======
+					case 'TEMP_WARNING':
+						$ret["type"] = "warning";
+						$ret["type_human"] = '<span class="label label-info">' . $this->_language['warning'] . '</span>';
+						
+						// Convert expiry date
+						$date = $punishment->end / 1000;
+						
+						$ret["expires"] = $date;
+						if(strtotime('now') < $date)
+							$ret["expires_human"] = '<span class="label label-danger" rel="tooltip" data-trigger="hover" data-original-title="' . str_replace('{x}', date("jS M Y", $date), $this->_language['expires_x']) . '">' . $this->_language['active'] . '</span>';
+						else
+							$ret["expires_human"] = '<span class="label label-success" rel="tooltip" data-trigger="hover" data-original-title="' . str_replace('{x}', date("jS M Y", $date), $this->_language['expired_x']) . '">' . $this->_language['expired'] . '</span>';
+					break;
+					
+>>>>>>> upstream/master
 					case 'KICK':
 						// Kick
 						$ret["type"] = "kick";
@@ -1046,7 +1067,11 @@ class Infractions {
 	// Retrieve a specific infraction
 	// Params: $id - ID of ban to retrieve
 	public function ab_getInfraction($id){
+<<<<<<< HEAD
 		$results = $this->_db->get('punishmenthistory', array('id', '=', $id))->results();
+=======
+		$results = $this->_db->get('PunishmentHistory', array('id', '=', $id))->results();
+>>>>>>> upstream/master
 		
 		if(count($results)) return $results[0];
 

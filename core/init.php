@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <?php 
 session_start();
  
+=======
+<?php
+session_start();
+
+>>>>>>> upstream/master
 if(!isset($page)){
 	die();
 }
@@ -19,14 +25,22 @@ if(!isset($path)){
 if(!isset($path)){
 	require_once 'core/includes/smarty/Smarty.class.php'; // Smarty
 	require_once 'core/includes/sanitize.php'; // Sanitisation
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	// Normal autoloader
 	spl_autoload_register(function($class) {
 		if(strpos($class, 'TeamSpeak3') === false){
 			require_once 'core/classes/' . str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 		}
 	});
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 } else if($path === "../../../"){
 	// For banner
 	require_once '../../includes/smarty/Smarty.class.php';
@@ -43,10 +57,17 @@ if(!isset($path)){
 	});
 }
 
+<<<<<<< HEAD
 /* 
  *  Initialise
  */
  
+=======
+/*
+ *  Initialise
+ */
+
+>>>>>>> upstream/master
 if($page !== 'install'){
 	$queries 	= new Queries();
 	$user	 	= new User();
@@ -75,7 +96,11 @@ if($page !== 'install'){
 	if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) {
 		$hash = Cookie::get(Config::get('remember/cookie_name'));
 		$hashCheck = DB::getInstance()->get('users_session', array('hash', '=', $hash));
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		if($hashCheck->count()){
 			$user = new User($hashCheck->first()->user_id);
 			$user->login();
@@ -100,7 +125,11 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 	$c->setCache('themecache');
 	$theme_result = $c->retrieve('theme');
 	if(!($theme_result)) $theme_result = 'Bootstrap';
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	$inverse_navbar = $c->retrieve('inverse_navbar');
 
 	// Template
@@ -109,19 +138,32 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 	if(!($template) || !is_dir('styles/templates/' . $template)){
 		$template = 'Default';
 	}
+<<<<<<< HEAD
 	
 	
 	// Display page load time?
 	$c->setCache('page_load_cache');
 	$page_loading = $c->retrieve('page_load');
 	 
+=======
+
+
+	// Display page load time?
+	$c->setCache('page_load_cache');
+	$page_loading = $c->retrieve('page_load');
+
+>>>>>>> upstream/master
 	// Initialise array for navbar items and footer navigation items, and also custom scripts/css
 	$navbar_array = array();
 	$footer_nav_array = array();
 	$admin_sidebar = array();
 	$custom_js = array();
 	$custom_css = array();
+<<<<<<< HEAD
 	 
+=======
+
+>>>>>>> upstream/master
 	// Get enabled addons
 	$enabled_addon_pages = array();
 	$addons = $queries->getWhere('addons', array('enabled', '=', 1));
@@ -138,6 +180,7 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 			));
 		}
 	}
+<<<<<<< HEAD
 	
 	/*
 	 *  Todo: cache whether the status module is enabled 
@@ -152,6 +195,22 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 	$play_enabled = $play_enabled[0]->value;
 
 	
+=======
+
+	/*
+	 *  Todo: cache whether the status module is enabled
+	 */
+	$status_enabled = $queries->getWhere('settings', array('name', '=', 'mc_status_module'));
+	$status_enabled = $status_enabled[0];
+
+	/*
+	 *  Todo: cache whether the Play page is enabled
+	 */
+	$play_enabled = $queries->getWhere('settings', array('name', '=', 'play_page_enabled'));
+	$play_enabled = $play_enabled[0]->value;
+
+
+>>>>>>> upstream/master
 	// Get enabled modules
 	$modules = $queries->getWhere('core_modules', array('enabled', '=', 1));
 	foreach($modules as $module){
@@ -166,7 +225,11 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 
 	// Perform tasks for signed in users
 	if($user->isLoggedIn()){
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		// Update a user's IP
 		$ip = $user->getIP();
 		if(filter_var($ip, FILTER_VALIDATE_IP)){
@@ -174,18 +237,30 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 				'lastip' => $ip
 			));
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		// Update user last online
 		$queries->update('users', $user->data()->id, array(
 			'last_online' => date('U')
 		));
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		// Is user banned?
 		if($user->data()->isbanned == 1){
 			// Yes, log them out
 			$user->logout();
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		// Perform moderator actions
 		if($user->canViewMCP($user->data()->id)){
 			// Are there any open reports for moderators?
@@ -207,7 +282,11 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 				$unread_pms[] = $pm_query[0];
 			}
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		$alerts = $queries->getWhere('alerts', array('user_id', '=', $user->data()->id));
 
 		$unread_alerts = array();
@@ -217,6 +296,19 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
 			}
 		}
 		
+<<<<<<< HEAD
+=======
+		// Basic user variables
+		$smarty->assign('LOGGED_IN_USER', array(
+			'username' => Output::getClean($user->data()->username),
+			'mcname' => Output::getClean($user->data()->mcname),
+			'profile' => '/profile/' . Output::getClean($user->data()->mcname),
+			'uuid' => Output::getClean($user->data()->uuid),
+			'modcp' => $user->canViewMCP($user->data()->id),
+			'admincp' => $user->canViewACP($user->data()->id)
+		));
+
+>>>>>>> upstream/master
 	} else {
 		// User not logged in
 		// Display cookie and log in/register notice
@@ -225,7 +317,21 @@ if($page !== 'query_alerts' && $page !== 'query_pms' && $page !== 'install' && $
           <button type="button" class="close close-cookie" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">' . $general_language['close'] . '</span></button>
 	      ' . $general_language['cookie_message'] . '
 	    </div>';
+<<<<<<< HEAD
 		
 		Session::flash('global', $cookie_message);
 	}
 }
+=======
+
+		Session::flash('global', $cookie_message);
+	}
+
+    // Auto unset signin tfa variables if set
+    if((isset($_SESSION['remember']) || isset($_SESSION['username']) || isset($_SESSION['password'])) && !isset($_POST['tfa'])){
+        unset($_SESSION['remember']);
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+    }
+}
+>>>>>>> upstream/master

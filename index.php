@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+>>>>>>> upstream/master
 /*
  *	Made by Samerton
  *  http://worldscapemc.co.uk
@@ -9,12 +13,21 @@
 
 // Start page load timer
 $start = microtime(true);
+<<<<<<< HEAD
  
 // Temp
 date_default_timezone_set('Europe/London');
  
 // Definitions 
 define('PATH', '/'); 
+=======
+
+// Temp
+date_default_timezone_set('Europe/London');
+
+// Definitions
+define('PATH', '/');
+>>>>>>> upstream/master
 define('ROOT_PATH', dirname(__FILE__));
 $page = 'Home';
 
@@ -38,7 +51,11 @@ if(is_file('pages/install.php')){
 		if(!unlink('pages/install.php')) die('Please delete <strong>pages/install.php</strong> before continuing.');
 	} else {
 		$page = 'install';
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		require('core/init.php');
 		require('pages/install.php');
 		die();
@@ -59,7 +76,11 @@ if(empty($directories[0]) && empty($directories[1])){
 	foreach($directories as $directory){
 		if(strpos($directory, '?') !== false){
 			$params = $directory; // Get URL parameters
+<<<<<<< HEAD
 			unset($directories[$n]); 
+=======
+			unset($directories[$n]);
+>>>>>>> upstream/master
 		}
 		$n++;
 	}
@@ -88,7 +109,11 @@ if(is_file($page_path)){
 				// Kill the script
 				die();
 			}
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 			// API?
 			if($directories[1] == 'api'){
 				if(is_file('pages' . DIRECTORY_SEPARATOR . 'api' . DIRECTORY_SEPARATOR . $directories[2] . DIRECTORY_SEPARATOR . 'index.php')){
@@ -96,25 +121,41 @@ if(is_file($page_path)){
 					die();
 				}
 			}
+<<<<<<< HEAD
 			
 			// Custom page?
 			$page_path = explode('/', $page_path);
 			
 			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1]));
 			
+=======
+
+			// Custom page?
+			$page_path = explode('/', $page_path);
+
+			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1]));
+
+>>>>>>> upstream/master
 			if(count($custom_pages)){
 				$page_title = $custom_pages[0]->title;
 				$page_content = $custom_pages[0]->content;
 				$page_id = $custom_pages[0]->id;
+<<<<<<< HEAD
 				
 				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
 				
+=======
+
+				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
+
+>>>>>>> upstream/master
 				// For navbar
 				$page = $custom_pages[0]->title;
 
 				// Include the page
 				require 'pages/extra.php';
 
+<<<<<<< HEAD
 				// Kill the page 
 				die();
 			}
@@ -122,23 +163,45 @@ if(is_file($page_path)){
 			// Doesn't exist without trailing '/', try again with trailing '/'
 			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1] . '/'));
 			
+=======
+				// Kill the page
+				die();
+			}
+
+			// Doesn't exist without trailing '/', try again with trailing '/'
+			$custom_pages = $queries->getWhere('custom_pages', array('url', '=', '/' . $page_path[1] . '/'));
+
+>>>>>>> upstream/master
 			if(count($custom_pages)){
 				$page_title = $custom_pages[0]->title;
 				$page_content = $custom_pages[0]->content;
 				$page_id = $custom_pages[0]->id;
+<<<<<<< HEAD
 				
 				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
 				
+=======
+
+				if($custom_pages[0]->redirect == 1) $redirect_page = htmlspecialchars($custom_pages[0]->link);
+
+>>>>>>> upstream/master
 				// For navbar
 				$page = $custom_pages[0]->title;
 
 				// Include the page
 				require 'pages/extra.php';
 
+<<<<<<< HEAD
 				// Kill the page 
 				die();
 			}
 			
+=======
+				// Kill the page
+				die();
+			}
+
+>>>>>>> upstream/master
 			// 404
 			require('404.php');
 		}

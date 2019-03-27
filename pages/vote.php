@@ -64,6 +64,7 @@ if(!in_array('Vote', $enabled_addon_pages)){
 	
 	$sites = $queries->getWhere("vote_sites", array("id", "<>", 0));
 	
+<<<<<<< HEAD
 	if(count($sites) > 4){
 		// How many buttons on the second row?
 		$second_row = count($sites) - 4;
@@ -148,6 +149,50 @@ if(!in_array('Vote', $enabled_addon_pages)){
 	  
     </div>
 		
+=======
+	// How many rows/columns?
+	$total = count($sites);
+	
+	for($i = 0; $i < $total; $i++){
+		if($i % 4 == 0){
+			// Determine number of columns in the row
+			$remaining = count($sites);
+			
+			if($remaining >= 4)
+				$col_type = 3;
+			else {
+				$end = $i + $remaining;
+				
+				switch($remaining){
+					case 1:
+						$col_type = 12;
+					break;
+					case 2:
+						$col_type = 6;
+					break;
+					case 3:
+						$col_type = 4;
+					break;
+				}
+			}
+			
+			echo '<div class="row">';
+		}
+		
+		echo '<div class="col-md-' . $col_type . '">';
+		echo '<center><a class="btn btn-lg btn-block btn-primary" href="' . str_replace("&amp;", "&", htmlspecialchars($sites[$i]->site)) . '" target="_blank" role="button">' . htmlspecialchars($sites[$i]->name) . '</a></center>';
+		echo '</div>';
+		unset($sites[$i]);
+		
+		if(($i + 1) % 4 == 0)
+			echo '</div><br />';
+
+	}
+	?>
+
+    </div>
+
+>>>>>>> upstream/master
 	<?php
 	// Footer
 	require('core/includes/template/footer.php');

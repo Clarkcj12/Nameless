@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+>>>>>>> upstream/master
 /*
  *	Made by Samerton
  *  http://worldscapemc.co.uk
@@ -7,7 +11,11 @@
  *  Copyright (c) 2016 Samerton
  */
 
+<<<<<<< HEAD
 header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found"); 
+=======
+header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+>>>>>>> upstream/master
 
 ?>
 
@@ -22,7 +30,11 @@ header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
     <link rel="icon" href="/core/assets/favicon.ico">
 
     <title>404 &bull; <?php echo $sitename; ?></title>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	<link href="/core/assets/css/bootstrap.min.css" rel="stylesheet">
 
   </head>
@@ -33,7 +45,11 @@ header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
 	    <h1>404</h1>
 		<h4><?php echo $general_language['404']; ?></h4>
 		<div class="btn-group" role="group" aria-label="...">
+<<<<<<< HEAD
 		  <a href="#" class="btn btn-primary btn-lg" onclick="window.history.back()"><?php echo $general_language['back']; ?></a>
+=======
+		  <button class="btn btn-primary btn-lg" onclick="javascript:history.go(-1)"><?php echo $general_language['back']; ?></button>
+>>>>>>> upstream/master
 		  <a href="/" class="btn btn-success btn-lg"><?php echo $navbar_language['home']; ?></a>
 	    </div>
 	  </div>

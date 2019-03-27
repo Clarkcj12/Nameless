@@ -110,7 +110,14 @@ if(Input::exists()){
 								
 								$headers = 'From: ' . $siteemail . "\r\n" .
 									'Reply-To: ' . $siteemail . "\r\n" .
+<<<<<<< HEAD
 									'X-Mailer: PHP/' . phpversion();
+=======
+									'X-Mailer: PHP/' . phpversion() . "\r\n" .
+									'MIME-Version: 1.0' . "\r\n" . 
+									'Content-type: text/plain; charset=UTF-8' . "\r\n";
+								
+>>>>>>> upstream/master
 								mail($to, $subject, $message, $headers);
 							}
 							
@@ -218,7 +225,11 @@ $form_content .= '" tabindex="1">
 </div>' . PHP_EOL . 
 '<input type="hidden" name="token" value="' .  Token::generate() . '">';
 
+<<<<<<< HEAD
 $submit = '<button type="submit" class="btn btn-primary btn-block btn-lg">' . $user_language['sign_in'] . '</button>';
+=======
+$submit = '<button type="submit" class="btn btn-success btn-block btn-lg">' . $user_language['sign_in'] . '</button>';
+>>>>>>> upstream/master
 
 // Smarty variables
 $smarty->assign('SIGNIN', $user_language['sign_in']);

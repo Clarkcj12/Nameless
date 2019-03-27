@@ -12,7 +12,18 @@
 // Initialise the members addon
 // We've already checked to see if it's enabled
 
+<<<<<<< HEAD
 require('addons/Members/language.php');
+=======
+// Check language
+$c->setCache('languagecache');
+$language = $c->retrieve('language');
+
+if(file_exists('addons/Members/' . $language . '.php'))
+	require('addons/Members/' . $language . '.php');
+else
+	require('addons/Members/language.php');
+>>>>>>> upstream/master
 
 // Check cache for link location
 $c->setCache('membersaddon');

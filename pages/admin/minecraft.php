@@ -703,6 +703,12 @@ $adm_page = "minecraft";
 						$validation = $validate->check($_POST, array(
 							'mcassoc_key' => array(
 								'max' => 128
+<<<<<<< HEAD
+=======
+							),
+							'mcassoc_instance' => array(
+								'max' => 32
+>>>>>>> upstream/master
 							)
 						));
 						
@@ -723,6 +729,14 @@ $adm_page = "minecraft";
 							$queries->update('settings', $mcassoc_key[0]->id, array(
 								'value' => htmlspecialchars(Input::get('mcassoc_key'))
 							));
+<<<<<<< HEAD
+=======
+
+							$mcassoc_instance = $queries->getWhere('settings', array('name', '=', 'mcassoc_instance'));
+							$queries->update('settings', $mcassoc_instance[0]->id, array(
+								'value' => htmlspecialchars(Input::get('mcassoc_instance'))
+							));
+>>>>>>> upstream/master
 							
 						} else {
 							// Invalid key

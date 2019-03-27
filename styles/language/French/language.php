@@ -142,6 +142,15 @@ $admin_language = array(
 	'text' => 'Texte',
 	'textarea' => 'Zone de texte',
 	'question_deleted' => 'Question supprimée',
+<<<<<<< HEAD
+=======
+	'name_required' => 'Name is required.',
+	'question_required' => 'Question is required.',
+	'name_minimum' => 'Name must be a minimum of 2 characters.',
+	'question_minimum' => 'Question must be a minimum of 2 characters.',
+	'name_maximum' => 'Name must be a maximum of 16 characters.',
+	'question_maximum' => 'Question must be a maximum of 16 characters.',
+>>>>>>> upstream/master
 	'use_followers' => 'Utiliser la fonction "Fan"?',
 	'use_followers_help' => 'Si la fonction "Fan" est désactivée, la fonction "Amis" sera utilisée.',
 	
@@ -238,6 +247,10 @@ $admin_language = array(
 	'confirm_user_deletion' => 'Êtes-vous certain de vouloir supprimer cet utilisateur: {x}?', // Don't replace "{x}"
 	'groups' => 'Groupes',
 	'group' => 'Groupe',
+<<<<<<< HEAD
+=======
+	'group' => 'Groupe 2',
+>>>>>>> upstream/master
 	'new_group' => 'Nouveau Groupe',
 	'id' => 'ID',
 	'name' => 'Nom',
@@ -681,6 +694,10 @@ $general_language = array(
 	'queried_in' => 'Requête:',
 	'server_status' => 'Statut du Serveur',
 	'no_players_online' => 'Il n\'y a pas de joueurs en ligne!',
+<<<<<<< HEAD
+=======
+	'1_player_online' => 'There is 1 player online.',
+>>>>>>> upstream/master
 	'x_players_online' => 'Il y a {x} joueurs en ligne .', // Don't replace {x}
 	
 	// Other

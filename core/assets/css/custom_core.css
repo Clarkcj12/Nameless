@@ -29,5 +29,11 @@
 }
 .forum_post {
 	overflow: auto;
+<<<<<<< HEAD
 	width: 100%
 }
+=======
+	width: 100%;
+	word-wrap: break-word;
+}
+>>>>>>> upstream/master

@@ -1,3 +1,15 @@
+<<<<<<< HEAD
   RewriteEngine on
 
   RewriteRule ^banner.png$ index.php
+=======
+<Files *.php>
+    Order Deny,Allow
+    Allow from all
+</Files>
+
+
+  RewriteEngine on
+
+  RewriteRule ^banner.png$ index.php
+>>>>>>> upstream/master

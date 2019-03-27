@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Finished products of Nameless can be found on
 https://namelessmc.com/
 
@@ -16,6 +17,19 @@ Nameless version 2.0 is currently in development and the source can be viewed on
 NamelessMC is a free, easy to use & powerful website software for your Minecraft server, which includes a large range of features.
 
 Version 1.0.16 features:
+=======
+# NamelessMC ![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/NamelessMC/Nameless.svg) ![Percentage of issues still open](http://isitmaintained.com/badge/open/NamelessMC/Nameless.svg)
+
+## Version 2.0.0
+
+Nameless version 2.0.0 is currently in development and the source can be viewed on the v2 branch. Until it's ready for production use, any pre-releases can be found here: https://github.com/NamelessMC/Nameless/releases.
+
+## Version 1.0.21
+
+NamelessMC is a free, easy to use & powerful website software for your Minecraft server, which includes a large range of features.
+
+Version 1.0.21 features:
+>>>>>>> upstream/master
 
 - Template and theme system
 - Languages
@@ -38,6 +52,11 @@ Version 1.0.16 features:
 - Announcements
 
 Included addons:
+<<<<<<< HEAD
+=======
+- Ban appeal
+- Bug report
+>>>>>>> upstream/master
 - Donate
 - Member list
 - Voting
@@ -48,7 +67,9 @@ Core modules:
 - Social media
 - Registration
 - Voice server status
+- Staff Applications
 
+<<<<<<< HEAD
 Upcoming addons (these will need to be downloaded separately): 
 - PermissionsEX control panel
 - Stats
@@ -62,10 +83,24 @@ Upcoming addons (these will need to be downloaded separately):
 * [Plugin Download](https://ci.namelessmc.com/jenkins/job/Nameless-Plugin/)
 
 # Full Staff list:
+=======
+## Downloads & Support
+* [Changelog](https://github.com/NamelessMC/Nameless/blob/master/changelog.txt)
+* [Issue Tracker](https://github.com/NamelessMC/Nameless/issues)
+* [Support](http://www.spigotmc.org/threads/nameless-minecraft-website-software.34810/)
+* [Download](https://github.com/NamelessMC/Nameless/releases)
+* [Plugin Download](https://plugin.namelessmc.com/)
+
+# Full Management list:
+>>>>>>> upstream/master
 **Project**
 * @Samerton
 * @Awtra
 * @partydragen
+<<<<<<< HEAD
+=======
+* @IsS127
+>>>>>>> upstream/master
 
 # Full contributor list:
 **Main repository**
@@ -95,7 +130,11 @@ Upcoming addons (these will need to be downloaded separately):
 * @mentimjojo
 * @McLive
 * @melerpe
+<<<<<<< HEAD
 * @IsS127 
+=======
+* @IsS127
+>>>>>>> upstream/master
 * @ConnorLinFoot
 * @lockerecca
 * @tombomb
@@ -113,6 +152,7 @@ Upcoming addons (these will need to be downloaded separately):
 * @Fiiily
 * @OscarWoHA
 
+<<<<<<< HEAD
 **[NamelessMC Website](http://namelessmc.github.io/)**
 * @Samerton
 * @Root3287
@@ -124,11 +164,24 @@ Upcoming addons (these will need to be downloaded separately):
 * @Lmmb74
 * @samerton
 * @Fellings1
+=======
+**[NamelessMC Website](https://namelessmc.com)**
+* @Samerton
+* @IsS127
+
+**[NamelessMC Plugin](https://github.com/NamelessMC/Nameless-Plugin)**
+* @IsS127
+* @Derkades
+* @Lmmb74
+* @samerton
+* @Awtra
+>>>>>>> upstream/master
 * @partydragen
 * @Envici
 * @rojo8399
 
 **NamelessMC Translations**
+<<<<<<< HEAD
 * English: @Samerton, @Fellings1
 * German: @LPkkjHD, @manuelgu, @BukkitTNT, philipp0002, @McLive, @Cl1608Ho and @monjo44
 * Spanish: @paloke, @lockerecca, @talkahe, @mrlost, Dexkum and @Ariuw
@@ -143,6 +196,25 @@ Upcoming addons (these will need to be downloaded separately):
 ## Discord
 [<img src="https://discordapp.com/api/guilds/246705793066467328/widget.png?style=shield">](https://discord.gg/r7Eq4jw)
 The official [NamelessMC Discord bot](https://github.com/dannygtech/NamelessBOT) was made by **Jellz** and [**BrightSkyz**](https://brightskyz.xyz)! Huge thanks to them!
+=======
+* Chinese: @BirkhoffLee
+* Czech: @SnooWiK, @Root3287, @godleydemon, @yshf9
+* Dutch: @Sander0542, @Azoraqua, @Headhunterzpw, @melerpe, @aycgit, @yshf9, @GodleyDemon, @Tim-NL, @Derkades, smessie, @DoraKlikOpDora, @TheSander562
+* EnglishUK: @Samerton, @Awtra
+* Finnish: -kakara-, @Root3287, @godleydemon, @yshf9
+* French: @Pandalyser, CreaModZ, Aviortheking, @Noiknez, @yshf9, @Root3287
+* German: @LPkkjHD, @nerdtron123, @manuelgu, @BukkitTNT, philipp0002, @McLive, @Cl1608Ho, @monjo44, @Root3287, @godleydemon, @yshf9
+* Japanese: SimplyRin
+* Norsk: @partydragen, @Root3287, @godleydemon, @OscarWoHA, @tlystad24
+* Portugues: @dgateles, @dasilvaj4, @Root3287, @godleydemon
+* Slovak: Marki35, @Root3287, @godleydemon, MrMiijoSK
+* Spanish: @paloke, @mrlost, @Legomix13, Dexkum, @SrBas97, @Root3287, @Ariuw, @godleydemon, @iJosGCS
+
+## Discord
+[<img src="https://discordapp.com/api/guilds/246705793066467328/widget.png?style=shield">](https://discord.gg/HYVMgN2)
+
+The official [NamelessMC Discord bot](https://github.com/NamelessMC/NamelessBot) was made by [**BrightSkyz**](https://github.com/BrightSkyz).
+>>>>>>> upstream/master
 
 <!--## IRC
 \#NamelessMC on [irc.spi.gt](http://irc.spi.gt/iris/?channels=namelessmc)-->

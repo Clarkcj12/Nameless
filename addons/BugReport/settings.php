@@ -238,15 +238,72 @@ if(count($questions)){
 					Session::flash('apps_post_success', '<div class="alert alert-info">' . $admin_language['successfully_updated'] . '</div>');
 					echo '<script data-cfasync="false">window.location.replace(\'/admin/addons/?action=edit&addon=BugReport\');</script>';
 					die();
+<<<<<<< HEAD
+=======
+				} else {
+					// errors
+					$error = array();
+					foreach($validation->errors() as $item){
+						if(strpos($item, 'is required') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_required'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_required'];
+								break;
+							}
+						} else if(strpos($item, 'minimum') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_minimum'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_minimum'];
+								break;
+							}
+						} else if(strpos($item, 'maximum') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_maximum'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_maximum'];
+								break;
+							}
+						}
+					}
+>>>>>>> upstream/master
 				}
 		
 			} else {
 				// Invalid token
+<<<<<<< HEAD
+=======
+				$error[] = $admin_language['invalid_token'];
+>>>>>>> upstream/master
 			}
 		}
 
 		$question = $question[0];
 ?>
+<<<<<<< HEAD
+=======
+<!-- Errors? Display here -->
+<?php
+if(isset($error)){
+?>
+<div class="alert alert-danger">
+<?php
+	foreach($error as $item){
+		echo $item . '<br />';
+	}
+?>
+</div>
+<?php
+}
+?>
+>>>>>>> upstream/master
 <strong><?php echo $bugreport_language['editing_question']; ?></strong>
 <span class="pull-right"><a href="/admin/addons/?action=edit&amp;addon=BugReport&amp;question=<?php echo $question->id; ?>&amp;module_action=delete" onclick="return confirm('<?php echo $bugreport_language['confirm_cancellation']; ?>');" class="btn btn-danger"><?php echo $bugreport_language['delete_question']; ?></a></span>
 <br /><br />
@@ -315,15 +372,70 @@ if(count($questions)){
 					die();
 				} else {
 					// errors
+<<<<<<< HEAD
+=======
+					$error = array();
+					foreach($validation->errors() as $item){
+						if(strpos($item, 'is required') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_required'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_required'];
+								break;
+							}
+						} else if(strpos($item, 'minimum') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_minimum'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_minimum'];
+								break;
+							}
+						} else if(strpos($item, 'maximum') !== false){
+							switch($item){
+								case (strpos($item, 'name') !== false):
+									$error[] = $bugreport_language['name_maximum'];
+								break;
+								case (strpos($item, 'question') !== false):
+									$error[] = $bugreport_language['question_maximum'];
+								break;
+							}
+						}
+					}
+>>>>>>> upstream/master
 				}
 				
 			} else {
 				// Invalid token
+<<<<<<< HEAD
+=======
+				$error[] = $admin_language['invalid_token'];
+>>>>>>> upstream/master
 			}
 		}
 ?>
 <strong><?php echo $bugreport_language['new_question']; ?></strong><br /><br />
+<<<<<<< HEAD
 
+=======
+<!-- Errors? Display here -->
+<?php
+if(isset($error)){
+?>
+<div class="alert alert-danger">
+<?php
+	foreach($error as $item){
+		echo $item . '<br />';
+	}
+?>
+</div>
+<?php
+}
+?>
+>>>>>>> upstream/master
 <form method="post" action="">
   <label for="name"><?php echo $bugreport_language['name']; ?></label>
   <input class="form-control" type="text" name="name" id="name" placeholder="<?php echo $bugreport_language['name']; ?>">

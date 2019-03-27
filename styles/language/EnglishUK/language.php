@@ -135,6 +135,15 @@ $admin_language = array(
 	'dropdown' => 'Dropdown',
 	'text' => 'Text',
 	'textarea' => 'Text Area',
+<<<<<<< HEAD
+=======
+	'name_required' => 'Name is required.',
+	'question_required' => 'Question is required.',
+	'name_minimum' => 'Name must be a minimum of 2 characters.',
+	'question_minimum' => 'Question must be a minimum of 2 characters.',
+	'name_maximum' => 'Name must be a maximum of 16 characters.',
+	'question_maximum' => 'Question must be a maximum of 16 characters.',
+>>>>>>> upstream/master
 	'question_deleted' => 'Question Deleted',
 	'use_followers' => 'Use followers?',
 	'use_followers_help' => 'If disabled, the friends system will be used.',
@@ -232,6 +241,10 @@ $admin_language = array(
 	'confirm_user_deletion' => 'Are you sure you want to delete the user {x}?', // Don't replace "{x}"
 	'groups' => 'Groups',
 	'group' => 'Group',
+<<<<<<< HEAD
+=======
+	'group2' => 'Second Group',
+>>>>>>> upstream/master
 	'new_group' => 'New Group',
 	'id' => 'ID',
 	'name' => 'Name',
@@ -240,7 +253,11 @@ $admin_language = array(
 	'group_html' => 'Group HTML',
 	'group_html_lg' => 'Group HTML Large',
 	'donor_group_id' => 'Donor package ID',
+<<<<<<< HEAD
 	'donor_group_id_help' => '<p>This is the ID of the group\'s package from Buycraft, MinecraftMarket or MCStock.</p><p>This can be left empty.</p>',
+=======
+	'donor_group_id_help' => '<p>This is the ID of the group\'s package from your Tebex or CraftingStore</p><p>This can be left empty.</p>',
+>>>>>>> upstream/master
 	'donor_group_instructions' => 	'<p>Donor groups must be created in the order of <strong>lowest value to highest value</strong>.</p>
 									<p>For example, a £10 package will be created before a £20 package.</p>',
 	'delete_group' => 'Delete Group',
@@ -262,7 +279,11 @@ $admin_language = array(
 	'use_plugin' => 'Enable Nameless API?',
 	'force_avatars' => 'Force Minecraft avatars?',
 	'uuid_linking' => 'Enable UUID linking?',
+<<<<<<< HEAD
 	'use_plugin_help' => 'Enabling the API, along with the <a href="https://www.spigotmc.org/resources/official-namelessplugin.42698/" title="NamelessPlugin" target="_blank">server plugin</a>, allows for rank synchronisation and also ingame registration and report submission.',
+=======
+	'use_plugin_help' => 'Enabling the API, along with the server plugin, allows for rank synchronisation and also ingame registration and report submission.',
+>>>>>>> upstream/master
 	'uuid_linking_help' => 'If disabled, user accounts won\'t be linked with UUIDs. It is highly recommended you keep this as enabled.',
 	'plugin_settings' => 'Plugin Settings',
 	'confirm_api_regen' => 'Are you sure you want to generate a new API key?',
@@ -552,8 +573,13 @@ $user_language = array(
 	'find_a_user' => 'Find a user',
 	'user_not_following' => 'This user does not follow anyone.',
 	'user_no_followers' => 'This user has no followers.',
+<<<<<<< HEAD
 	'following' => 'FOLLOWING',
 	'followers' => 'FOLLOWERS',
+=======
+	'following' => 'Following',
+	'followers' => 'Followers',
+>>>>>>> upstream/master
 	'display_location' => 'From {x}.', // Don't replace {x}, which will be the user's location
 	'display_age_and_location' => '{x}, from {y}.', // Don't replace {x} which will be the user's age, and {y} which will be their location
 	'write_on_user_profile' => 'Write something on {x}\'s profile...', // Don't replace {x}
@@ -679,7 +705,12 @@ $general_language = array(
 	'players_online' => 'Players Online:',
 	'queried_in' => 'Queried In:',
 	'server_status' => 'Server Status',
+<<<<<<< HEAD
 	'no_players_online' => 'There are no players online!',
+=======
+	'no_players_online' => 'There are no players online.',
+	'1_player_online' => 'There is 1 player online.',
+>>>>>>> upstream/master
 	'x_players_online' => 'There are {x} players online.', // Don't replace {x}
 	
 	// Other

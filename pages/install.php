@@ -1,14 +1,25 @@
 <?php
+<<<<<<< HEAD
 /* 
+=======
+/*
+>>>>>>> upstream/master
  *	Made by Samerton
  *  http://worldscapemc.co.uk
  *
  *  License: MIT
  */
+<<<<<<< HEAD
  
 require('core/includes/password.php'); // Require password compatibility
 require('core/integration/uuid.php'); // Require UUID integration
  
+=======
+
+require('core/includes/password.php'); // Require password compatibility
+require('core/integration/uuid.php'); // Require UUID integration
+
+>>>>>>> upstream/master
 if(isset($_GET["step"])){
 	$step = strtolower(htmlspecialchars($_GET["step"]));
 } else {
@@ -29,7 +40,11 @@ if(isset($_GET["step"])){
     <title>NamelessMC &bull; Install</title>
 
     <!-- Bootstrap core CSS -->
+<<<<<<< HEAD
     <link href="./core/assets/css/bootstrap.min.css" rel="stylesheet"> 
+=======
+    <link href="./core/assets/css/bootstrap.min.css" rel="stylesheet">
+>>>>>>> upstream/master
     <style type="text/css">
       .small-margin {
         margin-top: 10px;
@@ -65,6 +80,7 @@ if(isset($_GET["step"])){
             <hr class="small-margin">
             <p>This installer will guide you through the process of installing the NamelessMC website package.</p>
           </div>
+<<<<<<< HEAD
           
           <h4>Are you upgrading from 0.4.1?</h4>
 		  
@@ -77,6 +93,20 @@ if(isset($_GET["step"])){
 
           <hr>
           
+=======
+
+          <h4>Are you upgrading from 0.4.1?</h4>
+
+          <p>
+            <button type="button" onclick="location.href='./install?step=requirements'" class="btn btn-primary">New Installation &raquo;</button>
+            <button type="button" onclick="location.href='./install?step=upgrade_requirements'" class="btn btn-default">Upgrading from 0.4.1 &raquo;</button>
+          </p>
+
+		  <div class="alert alert-info">Note: if you're upgrading from a 1.x version to another 1.x version, you will need to follow the instructions from within the AdminCP's Update tab, rather than running through the installer again.</div>
+
+          <hr>
+
+>>>>>>> upstream/master
           <div class="panel-group">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -124,8 +154,13 @@ if(isset($_GET["step"])){
               </div>
             </div>
           </div>
+<<<<<<< HEAD
 	  
 	  <?php 
+=======
+
+	  <?php
+>>>>>>> upstream/master
 	  } else if($step === "requirements" || $step === "upgrade_requirements") {
 		$error = '<p style="display: inline;" class="text-danger"><span class="glyphicon glyphicon-remove-sign"></span></p><br />';
 		$success = '<p style="display: inline;" class="text-success"><span class="glyphicon glyphicon-ok-sign"></span></p><br />';
@@ -155,6 +190,7 @@ if(isset($_GET["step"])){
 		} else {
 			echo 'PHP PDO Extension - ' . $success;
 		}
+<<<<<<< HEAD
                 if(!extension_loaded('mysqlnd')){
                         echo 'PHP mysqlnd Extension - ' . $warning;
 						echo 'You may experience issues without the mysqlnd extension.<br />';
@@ -169,6 +205,22 @@ if(isset($_GET["step"])){
 			$php_error = true;
 		} else {
 			echo 'PHP mcrypt Extension - ' . $success;
+=======
+		if($step == "upgrade_requirements"){
+			if(!extension_loaded('mysqlnd')){
+				echo 'PHP mysqlnd Extension - ' . $warning;
+				$php_error = true;
+			} else {
+				echo 'PHP mysqlnd Extension - ' . $success;
+			}
+		} else {
+			if(!extension_loaded('mysql') && !extension_loaded('mysqli') && !extension_loaded('mysqlnd')){
+				echo 'PHP mysql, mysqli or mysqlnd Extension - ' . $warning;
+				$php_error = true;
+			} else {
+				echo 'PHP mysql, mysqli or mysqlnd Extension - ' . $success;
+			}
+>>>>>>> upstream/master
 		}
 		if(!function_exists('curl_version')){
 			echo 'PHP cURL Extension - ' . $error;
@@ -176,18 +228,42 @@ if(isset($_GET["step"])){
 		} else {
 			echo 'PHP cURL Extension - ' . $success;
 		}
+<<<<<<< HEAD
 		if(!class_exists("DOMDocument")){ // if there is a fatal error on the Requirements step, this is missing
 			echo 'PHP DOMDocument Class - ' . $error;
 			$php_error = true;
 		} else {
 			echo 'PHP DOMDocument Class - ' . $success;
+=======
+		if(!extension_loaded('xml')){
+			echo 'PHP XML Extension - ' . $error;
+			$php_error = true;
+		} else {
+			echo 'PHP XML Extension - ' . $success;
+		}
+		if(!is_writable('cache') || !is_writable('cache' . DIRECTORY_SEPARATOR . 'templates_c')){
+			echo 'Your <strong>cache</strong> and <strong>cache/templates_c</strong> directories must be writable. Please check your file permissions. ' . $error;
+			$php_error = true;
+		} else {
+			echo 'Cache and cache/templates_c directories writable - ' . $success;
+		}
+		if(!is_writable('core' . DIRECTORY_SEPARATOR . 'config.php')){
+			echo 'Your <strong>core/config.php</strong> file must be writable. Please check your file permissions. ' . $error;
+			$php_error = true;
+		} else {
+			echo 'core/config.php writable - ' . $success;
+>>>>>>> upstream/master
 		}
 	  ?>
 	  <br />
 	  <?php
 	    if(isset($php_error)){
 	  ?>
+<<<<<<< HEAD
 	  <div class="alert alert-danger">You must be running at least PHP version 5.3 with the required extensions enabled in order to proceed with installation.</div>
+=======
+	  <div class="alert alert-danger">You must be running at least PHP version 5.3 with the required extensions and permissions in order to proceed with installation.</div>
+>>>>>>> upstream/master
 	  <?php
 		} else {
                     if($step === "requirements") {
@@ -226,17 +302,30 @@ if(isset($_GET["step"])){
 					} else {
 						$db_password = '';
 					}
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> upstream/master
 					$prefix = Input::get('prefix');
 					if(empty($prefix)){
 						$prefix = '';
 					}
+<<<<<<< HEAD
 					
 					$prefix = htmlspecialchars($prefix);
 					
 					$db_prefix = "nl1_";
 					$cookie_name = "nlmc";
 					
+=======
+
+					$prefix = htmlspecialchars($prefix);
+
+					$db_prefix = "nl1_";
+					$cookie_name = "nlmc";
+
+>>>>>>> upstream/master
 					/*
 					 *  Test connection - use MySQLi here, as the config for PDO is not written
 					 */
@@ -247,6 +336,7 @@ if(isset($_GET["step"])){
 						/*
 						 *  Write to config file
 						 */
+<<<<<<< HEAD
 						$insert = 	'<?php' . PHP_EOL . 
 									'$GLOBALS[\'config\'] = array(' . PHP_EOL . 
 									'	"mysql" => array(' . PHP_EOL . 
@@ -268,6 +358,29 @@ if(isset($_GET["step"])){
 									'	)' . PHP_EOL . 
 									');';
 						
+=======
+						$insert = 	'<?php' . PHP_EOL .
+									'$GLOBALS[\'config\'] = array(' . PHP_EOL .
+									'	"mysql" => array(' . PHP_EOL .
+									'		"host" => "' . Input::get('db_address') . '", // Web server database IP (Likely to be 127.0.0.1)' . PHP_EOL .
+									'		"username" => "' . Input::get('db_username') . '", // Web server database username' . PHP_EOL .
+									'		"password" => \'' . $db_password . '\', // Web server database password' . PHP_EOL .
+									'		"db" => "' . Input::get('db_name') . '", // Web server database name' . PHP_EOL .
+									'		"port" => "' . Input::get('db_port') . '", // Web server database port' . PHP_EOL .
+									'		"prefix" => "' . $db_prefix . '" // Web server table prefix' . PHP_EOL .
+									'	),' . PHP_EOL .
+									'	"remember" => array(' . PHP_EOL .
+									'		"cookie_name" => "' . $cookie_name . '", // Name for website cookies' . PHP_EOL .
+									'		"cookie_expiry" => 604800' . PHP_EOL .
+									'	),' . PHP_EOL .
+									'	"session" => array(' . PHP_EOL .
+									'		"session_name" => "user",' . PHP_EOL .
+									'		"admin_name" => "admin",' . PHP_EOL .
+									'		"token_name" => "token"' . PHP_EOL .
+									'	)' . PHP_EOL .
+									');';
+
+>>>>>>> upstream/master
 						if(is_writable('core/config.php')){
 							$file = fopen('core/config.php','w');
 							fwrite($file, $insert);
@@ -275,7 +388,11 @@ if(isset($_GET["step"])){
 
 							$queries = new Queries();
 							$queries->dbInitialise($db_prefix); // Initialise the database
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$query = $mysqli->query("SELECT * FROM {$prefix}custom_pages");
 							while($row = $query->fetch_assoc()){
 								$queries->create('custom_pages', array(
@@ -285,6 +402,7 @@ if(isset($_GET["step"])){
 									'link_location' => 1
 								));
 							}
+<<<<<<< HEAD
 							
 							$query = $mysqli->query("INSERT nl1_forums SELECT * FROM {$prefix}forums");
 
@@ -292,12 +410,25 @@ if(isset($_GET["step"])){
 							
 							$query = $mysqli->query("INSERT nl1_friends SELECT * FROM {$prefix}friends");
 							
+=======
+
+							$query = $mysqli->query("INSERT nl1_forums SELECT * FROM {$prefix}forums");
+
+							$query = $mysqli->query("INSERT nl1_forums_permissions SELECT * FROM {$prefix}forums_permissions");
+
+							$query = $mysqli->query("INSERT nl1_friends SELECT * FROM {$prefix}friends");
+
+>>>>>>> upstream/master
 							$query = $mysqli->query("SELECT * FROM {$prefix}groups");
 							while($row = $query->fetch_assoc()){
 								$mod_cp = 0;
 								$admin_cp = 0;
 								$staff = 0;
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> upstream/master
 								if($row['id'] == 2){
 									$mod_cp = 1;
 									$admin_cp = 1;
@@ -306,7 +437,11 @@ if(isset($_GET["step"])){
 									$mod_cp = 1;
 									$staff = 1;
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> upstream/master
 								$queries->create('groups', array(
 									'id' => $row['id'],
 									'name' => $row['name'],
@@ -318,9 +453,15 @@ if(isset($_GET["step"])){
 									'staff' => $staff
 								));
 							}
+<<<<<<< HEAD
 							
 							$query = $mysqli->query("INSERT nl1_infractions SELECT * FROM {$prefix}infractions");
 							
+=======
+
+							$query = $mysqli->query("INSERT nl1_infractions SELECT * FROM {$prefix}infractions");
+
+>>>>>>> upstream/master
 							$query = $mysqli->query("SELECT * FROM {$prefix}mc_servers");
 							while($row = $query->fetch_assoc()){
 								if(isset($row['pre'])){
@@ -328,13 +469,21 @@ if(isset($_GET["step"])){
 								} else {
 									$pre = 0;
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> upstream/master
 								if(isset($row['player_list'])){
 									$player_list = $row['player_list'];
 								} else {
 									$player_list = 0;
 								}
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> upstream/master
 								$queries->create('mc_servers', array(
 									'ip' => $row['ip'],
 									'name' => $row['name'],
@@ -344,6 +493,7 @@ if(isset($_GET["step"])){
 									'player_list' => $player_list
 								));
 							}
+<<<<<<< HEAD
 							
 							$query = $mysqli->query("INSERT nl1_posts SELECT * FROM {$prefix}posts");
 							
@@ -359,6 +509,23 @@ if(isset($_GET["step"])){
 							
 							$query = $mysqli->query("INSERT nl1_settings SELECT * FROM {$prefix}settings");
 							
+=======
+
+							$query = $mysqli->query("INSERT nl1_posts SELECT * FROM {$prefix}posts");
+
+							$query = $mysqli->query("INSERT nl1_private_messages SELECT * FROM {$prefix}private_messages");
+
+							$query = $mysqli->query("INSERT nl1_private_messages_users SELECT * FROM {$prefix}private_messages_users");
+
+							$query = $mysqli->query("INSERT nl1_reports SELECT * FROM {$prefix}reports");
+
+							$query = $mysqli->query("INSERT nl1_reports_comments SELECT * FROM {$prefix}reports_comments");
+
+							$query = $mysqli->query("INSERT nl1_reputation SELECT * FROM {$prefix}reputation");
+
+							$query = $mysqli->query("INSERT nl1_settings SELECT * FROM {$prefix}settings");
+
+>>>>>>> upstream/master
 							$query = $mysqli->query("SELECT * FROM {$prefix}topics");
 							while($row = $query->fetch_assoc()){
 								$queries->create('topics', array(
@@ -375,6 +542,7 @@ if(isset($_GET["step"])){
 									'label' => null
 								));
 							}
+<<<<<<< HEAD
 							
 							$query = $mysqli->query("INSERT nl1_users SELECT * FROM {$prefix}users");
 							
@@ -387,6 +555,20 @@ if(isset($_GET["step"])){
 							// Core Modules
 							$modules_initialised = $queries->getWhere('core_modules', array('id', '<>', 0));
 							
+=======
+
+							$query = $mysqli->query("INSERT nl1_users SELECT * FROM {$prefix}users");
+
+							$query = $mysqli->query("INSERT nl1_users_admin_session SELECT * FROM {$prefix}users_admin_session");
+
+							$query = $mysqli->query("INSERT nl1_users_session SELECT * FROM {$prefix}users_session");
+
+							$query = $mysqli->query("INSERT nl1_uuid_cache SELECT * FROM {$prefix}uuid_cache");
+
+							// Core Modules
+							$modules_initialised = $queries->getWhere('core_modules', array('id', '<>', 0));
+
+>>>>>>> upstream/master
 							if(!count($modules_initialised)){
 								$queries->create('core_modules', array(
 									'name' => 'Google_Analytics',
@@ -409,10 +591,17 @@ if(isset($_GET["step"])){
 									'enabled' => 0
 								));
 							}
+<<<<<<< HEAD
 							
 							// Themes
 							$themes_initialised = $queries->getWhere('themes', array('id', '<>', 0));
 							
+=======
+
+							// Themes
+							$themes_initialised = $queries->getWhere('themes', array('id', '<>', 0));
+
+>>>>>>> upstream/master
 							if(!count($themes_initialised)){
 								$themes = array(
 									1 => array(
@@ -484,7 +673,11 @@ if(isset($_GET["step"])){
 										'enabled' => 0
 									)
 								);
+<<<<<<< HEAD
 								
+=======
+
+>>>>>>> upstream/master
 								foreach($themes as $theme){
 									$queries->create('themes', array(
 										'enabled' => $theme['enabled'],
@@ -492,18 +685,27 @@ if(isset($_GET["step"])){
 									));
 								}
 							}
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							// Templates
 							$queries->create('templates', array(
 								'enabled' => 1,
 								'name' => 'Default'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							// Cache
 							$c = new Cache();
 							$c->setCache('themecache');
 							$c->store('theme', 'Bootstrap');
 							$c->store('inverse_navbar', '0');
+<<<<<<< HEAD
 							
 							// Todo: update site name
 							//$c->setCache('sitenamecache');
@@ -520,26 +722,60 @@ if(isset($_GET["step"])){
 							
 							$plugin_key = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 32);
 							
+=======
+
+							// Todo: update site name
+							//$c->setCache('sitenamecache');
+							//$c->store('sitename', htmlspecialchars(Input::get('sitename')));
+
+							$c->setCache('templatecache');
+							$c->store('template', 'Default');
+
+							$c->setCache('languagecache');
+							$c->store('language', 'EnglishUK');
+
+							$c->setCache('page_load_cache');
+							$c->store('page_load', 0);
+
+							$plugin_key = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 32);
+
+>>>>>>> upstream/master
 							// New settings
 							$queries->update('settings', 13, array(
 								'value' => 'By registering on our website, you agree to the following:<p>This website uses "Nameless" website software. The "Nameless" software creators will not be held responsible for any content that may be experienced whilst browsing this site, nor are they responsible for any loss of data which may come about, for example a hacking attempt. The website is run independently from the software creators, and any content is the responsibility of the website administration.</p>'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'mc_api_key',
 								'value' => $plugin_key
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'phpmailer',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'phpmailer_type',
 								'value' => 'smtp'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$external_query = $queries->getWhere('settings', array('name', '=', 'external_query'));
 							if(!count($external_query)){
 								$queries->create('settings', array(
@@ -547,98 +783,174 @@ if(isset($_GET["step"])){
 									'value' => 'false'
 								));
 							}
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'use_plugin',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'uuid_linking',
 								'value' => '1'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'inverse_navbar',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'error_reporting',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'ga_script',
 								'value' => 'null'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'avatar_api',
 								'value' => 'cravatar'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							// Languages
 							$queries->create('settings', array(
 								'name' => 'language',
 								'value' => 'EnglishUK'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 't_and_c_site',
 								'value' => '<p>You agree to be bound by our website rules and any laws which may apply to this website and your participation.</p><p>The website administration have the right to terminate your account at any time, delete any content you may have posted, and your IP address and any data you input to the website is recorded to assist the site staff with their moderation duties.</p><p>The site administration have the right to change these terms and conditions, and any site rules, at any point without warning. Whilst you may be informed of any changes, it is your responsibility to check these terms and the rules at any point.</p>'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'incoming_email',
 								'value' => ''
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'query_update',
 								'value' => 'false'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'mc_status_module',
 								'value' => 'false'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'recaptcha_secret',
 								'value' => 'null'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'email_verification',
 								'value' => '1'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'play_page_enabled',
 								'value' => '1'
 							));
+<<<<<<< HEAD
 						
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'followers',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'discord',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'avatar_type',
 								'value' => 'helmavatar'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'use_mcassoc',
 								'value' => '0'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'mcassoc_key',
 								'value' => ''
@@ -648,16 +960,25 @@ if(isset($_GET["step"])){
 								'name' => 'mcassoc_instance',
 								'value' => ''
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'twitter_style',
 								'value' => 'light'
 							));
+<<<<<<< HEAD
 							
+=======
+
+>>>>>>> upstream/master
 							$queries->create('settings', array(
 								'name' => 'enable_name_history',
 								'value' => 1
 							));
+<<<<<<< HEAD
 							
 							// Version update
 							$version_id = $queries->getWhere('settings', array('name', '=', 'version'));
@@ -672,6 +993,22 @@ if(isset($_GET["step"])){
 							echo '<script>window.location.replace("./install?step=finish&from=upgrade");</script>';
 							die();
 							
+=======
+
+							// Version update
+							$version_id = $queries->getWhere('settings', array('name', '=', 'version'));
+							$queries->update('settings', $version_id[0]->id, array(
+								'value' => '1.0.21'
+							));
+
+
+							// Close connections
+							$mysqli->close();
+
+							echo '<script>window.location.replace("./install?step=finish&from=upgrade");</script>';
+							die();
+
+>>>>>>> upstream/master
 						} else {
 							/*
 							 *  File not writeable
@@ -750,9 +1087,15 @@ if(isset($_GET["step"])){
 				$db_password = "";
 				$db_prefix = "nl1_";
 				$cookie_name = "nlmc";
+<<<<<<< HEAD
 				
 				$db_password = Input::get('db_password');
 				
+=======
+
+				$db_password = Input::get('db_password');
+
+>>>>>>> upstream/master
 				if(!empty($db_password)){
 					$db_password = Input::get('db_password');
 				}
@@ -767,6 +1110,7 @@ if(isset($_GET["step"])){
 					/*
 					 *  Write to config file
 					 */
+<<<<<<< HEAD
 					$insert = 	'<?php' . PHP_EOL . 
 								'$GLOBALS[\'config\'] = array(' . PHP_EOL . 
 								'	"mysql" => array(' . PHP_EOL . 
@@ -788,14 +1132,44 @@ if(isset($_GET["step"])){
 								'	)' . PHP_EOL . 
 								');';
 					
+=======
+					$insert = 	'<?php' . PHP_EOL .
+								'$GLOBALS[\'config\'] = array(' . PHP_EOL .
+								'	"mysql" => array(' . PHP_EOL .
+								'		"host" => "' . Input::get('db_address') . '", // Web server database IP (Likely to be 127.0.0.1)' . PHP_EOL .
+								'		"username" => "' . Input::get('db_username') . '", // Web server database username' . PHP_EOL .
+								'		"password" => \'' . $db_password . '\', // Web server database password' . PHP_EOL .
+								'		"db" => "' . Input::get('db_name') . '", // Web server database name' . PHP_EOL .
+								'		"port" => "' . Input::get('db_port') . '", // Web server database port' . PHP_EOL .
+								'		"prefix" => "' . $db_prefix . '" // Web server table prefix' . PHP_EOL .
+								'	),' . PHP_EOL .
+								'	"remember" => array(' . PHP_EOL .
+								'		"cookie_name" => "' . $cookie_name . '", // Name for website cookies' . PHP_EOL .
+								'		"cookie_expiry" => 604800' . PHP_EOL .
+								'	),' . PHP_EOL .
+								'	"session" => array(' . PHP_EOL .
+								'		"session_name" => "user",' . PHP_EOL .
+								'		"admin_name" => "admin",' . PHP_EOL .
+								'		"token_name" => "token"' . PHP_EOL .
+								'	)' . PHP_EOL .
+								');';
+
+>>>>>>> upstream/master
 					if(is_writable('core/config.php')){
 						$file = fopen('core/config.php','w');
 						fwrite($file, $insert);
 						fclose($file);
+<<<<<<< HEAD
 						
 						echo '<script>window.location.replace("./install?step=database");</script>';
 						die();
 						
+=======
+
+						echo '<script>window.location.replace("./install?step=database");</script>';
+						die();
+
+>>>>>>> upstream/master
 					} else {
 						/*
 						 *  File not writeable
@@ -808,7 +1182,11 @@ if(isset($_GET["step"])){
 				}
 			} else {
 				$errors = "";
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 				foreach($validation->errors() as $error){
 					if(strstr($error, 'db_address')){
 						$errors .= "Please input a database address<br />";
@@ -886,12 +1264,20 @@ if(isset($_GET["step"])){
 			$queries = new Queries(); // Initialise queries
 		}
 		$prefix = Config::get('mysql/prefix');
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
                 if($queries->dbInitialise($prefix)) {
                     ?>
            <div class="alert alert-success">The database was initialised successfully, and you may now progress with the installation.</div>
            <button type='button' onclick="location.href='./install?step=settings'" class='btn btn-primary'>Continue &raquo;</button>
+<<<<<<< HEAD
                     <?php                    
+=======
+                    <?php
+>>>>>>> upstream/master
                 } else {
                     echo '<div class="alert alert-danger">Database initialisation failed.</div>';
                 }
@@ -915,6 +1301,7 @@ if(isset($_GET["step"])){
 					'max' => 1024
 				)
 			));
+<<<<<<< HEAD
 			
 			if($validation->passed()) {
 			
@@ -922,12 +1309,25 @@ if(isset($_GET["step"])){
 					$queries = new Queries(); // Initialise queries
 				}
 				
+=======
+
+			if($validation->passed()) {
+
+				if(!isset($queries)){
+					$queries = new Queries(); // Initialise queries
+				}
+
+>>>>>>> upstream/master
 				$plugin_key = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 32);
 				$uid = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 62);
 				// Get current unix time
 				$date = new DateTime();
 				$date = $date->getTimestamp();
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 				$data = array(
 					0 => array(
 						'name' => 'sitename',
@@ -1043,7 +1443,11 @@ if(isset($_GET["step"])){
 					),
 					28 => array(
 						'name' => 'version',
+<<<<<<< HEAD
 						'value' => '1.0.16'
+=======
+						'value' => '1.0.21'
+>>>>>>> upstream/master
 					),
 					29 => array(
 						'name' => 'version_checked',
@@ -1106,7 +1510,11 @@ if(isset($_GET["step"])){
 						'value' => 1
 					)
 				);
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 				$youtube_url = Input::get('youtube_url');
 				if(!empty($youtube_url)){
 					$data[4]["value"] = htmlspecialchars($youtube_url);
@@ -1133,7 +1541,11 @@ if(isset($_GET["step"])){
 				if(Input::get('user_avatars') == 1){
 					$data[22]["value"] = "1";
 				}
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 				try {
 					foreach($data as $setting){
 						$queries->create("settings", array(
@@ -1148,10 +1560,17 @@ if(isset($_GET["step"])){
 						'content' => 'Default help page. Customise in the admin panel.',
 						'link_location' => 3
 					));
+<<<<<<< HEAD
 					
 					// Core Modules
 					$modules_initialised = $queries->getWhere('core_modules', array('id', '<>', 0));
 					
+=======
+
+					// Core Modules
+					$modules_initialised = $queries->getWhere('core_modules', array('id', '<>', 0));
+
+>>>>>>> upstream/master
 					if(!count($modules_initialised)){
 						$queries->create('core_modules', array(
 							'name' => 'Google_Analytics',
@@ -1174,10 +1593,17 @@ if(isset($_GET["step"])){
 							'enabled' => 0
 						));
 					}
+<<<<<<< HEAD
 					
 					// Themes
 					$themes_initialised = $queries->getWhere('themes', array('id', '<>', 0));
 							
+=======
+
+					// Themes
+					$themes_initialised = $queries->getWhere('themes', array('id', '<>', 0));
+
+>>>>>>> upstream/master
 					if(!count($themes_initialised)){
 						$themes = array(
 							1 => array(
@@ -1249,7 +1675,11 @@ if(isset($_GET["step"])){
 								'enabled' => 0
 							)
 						);
+<<<<<<< HEAD
 						
+=======
+
+>>>>>>> upstream/master
 						foreach($themes as $theme){
 							$queries->create('themes', array(
 								'enabled' => $theme['enabled'],
@@ -1257,18 +1687,27 @@ if(isset($_GET["step"])){
 							));
 						}
 					}
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> upstream/master
 					// Templates
 					$queries->create('templates', array(
 						'enabled' => 1,
 						'name' => 'Default'
 					));
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> upstream/master
 					// Cache
 					$c = new Cache();
 					$c->setCache('themecache');
 					$c->store('theme', 'Bootstrap');
 					$c->store('inverse_navbar', '0');
+<<<<<<< HEAD
 					
 					$c->setCache('sitenamecache');
 					$c->store('sitename', htmlspecialchars(Input::get('site_name')));
@@ -1285,14 +1724,39 @@ if(isset($_GET["step"])){
 					echo '<script>window.location.replace("./install?step=account");</script>';
 					die();
 					
+=======
+
+					$c->setCache('sitenamecache');
+					$c->store('sitename', htmlspecialchars(Input::get('site_name')));
+
+					$c->setCache('templatecache');
+					$c->store('template', 'Default');
+
+					$c->setCache('languagecache');
+					$c->store('language', 'EnglishUK');
+
+					$c->setCache('page_load_cache');
+					$c->store('page_load', 0);
+
+					echo '<script>window.location.replace("./install?step=account");</script>';
+					die();
+
+>>>>>>> upstream/master
 				} catch(Exception $e){
 					echo "<br><div class='alert alert-danger'>".$e->getMessage()."</div>";
                                         die();
 				}
+<<<<<<< HEAD
 				
 			} else {
 				$errors = "";
 				
+=======
+
+			} else {
+				$errors = "";
+
+>>>>>>> upstream/master
 				foreach($validation->errors() as $error){
 					if(strstr($error, 'site_name')){
 						$errors .= "Please input a site name<br />";
@@ -1378,6 +1842,7 @@ if(isset($_GET["step"])){
 	  <?php
 	  } else if($step === "account"){
 		if(!isset($queries)){
+<<<<<<< HEAD
 			$queries = new Queries(); // Initialise queries 
 		}
 		$allow_mcnames = $queries->getWhere("settings", array("name", "=", "displaynames"));
@@ -1386,6 +1851,16 @@ if(isset($_GET["step"])){
 		if(Input::exists()){
 			$validate = new Validate();
 			
+=======
+			$queries = new Queries(); // Initialise queries
+		}
+		$allow_mcnames = $queries->getWhere("settings", array("name", "=", "displaynames"));
+		$allow_mcnames = $allow_mcnames[0]->value; // Can the user register with a non-Minecraft username?
+
+		if(Input::exists()){
+			$validate = new Validate();
+
+>>>>>>> upstream/master
 			$data = array(
 				'email' => array(
 					'required' => true,
@@ -1402,7 +1877,11 @@ if(isset($_GET["step"])){
 					'matches' => 'password'
 				)
 			);
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 			if($allow_mcnames === "false"){ // Custom usernames are disabled
 				$data['username'] = array(
 					'min' => 2,
@@ -1418,12 +1897,21 @@ if(isset($_GET["step"])){
 					'max' => 20
 				);
 			}
+<<<<<<< HEAD
 			
 			$validation = $validate->check($_POST, $data); // validate
 			
 			if($validation->passed()){
 				$user = new User();
 				
+=======
+
+			$validation = $validate->check($_POST, $data); // validate
+
+			if($validation->passed()){
+				$user = new User();
+
+>>>>>>> upstream/master
 				// Get Minecraft UUID of user
 				if($allow_mcnames !== "false"){
 					$mcname = Input::get('mcname');
@@ -1432,21 +1920,33 @@ if(isset($_GET["step"])){
 					$mcname = Input::get('username');
 					$profile = ProfileUtils::getProfile(Input::get('username'));
 				}
+<<<<<<< HEAD
 				
 				if(!empty($profile)){
 					$uuid = $profile->getProfileAsArray();
 					$uuid = $uuid['uuid']; 
+=======
+
+				if(!empty($profile)){
+					$uuid = $profile->getProfileAsArray();
+					$uuid = $uuid['uuid'];
+>>>>>>> upstream/master
 					if(empty($uuid)){
 						$uuid = '';
 					}
 				} else {
 					$uuid = '';
 				}
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 				if($uuid == ''){
 					// Error getting UUID, display an error asking user to update manually
 					$uuid_error = true;
 				}
+<<<<<<< HEAD
 				
 				// Hash password
 				$password = password_hash(Input::get('password'), PASSWORD_BCRYPT, array("cost" => 13));
@@ -1455,6 +1955,16 @@ if(isset($_GET["step"])){
 				$date = new DateTime();
 				$date = $date->getTimestamp();
 				
+=======
+
+				// Hash password
+				$password = password_hash(Input::get('password'), PASSWORD_BCRYPT, array("cost" => 13));
+
+				// Get current unix time
+				$date = new DateTime();
+				$date = $date->getTimestamp();
+
+>>>>>>> upstream/master
 				try {
 					// Create groups
 					// Only create if they don't already exist for some reason
@@ -1467,7 +1977,11 @@ if(isset($_GET["step"])){
 							'group_html_lg' => '<span class="label label-success">Member</span>'
 						));
 					}
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> upstream/master
 					$group_exists = $queries->getWhere("groups", array("id", "=", 2));
 					if(!count($group_exists)){
 						$queries->create("groups", array(
@@ -1480,7 +1994,11 @@ if(isset($_GET["step"])){
 							'staff' => 1
 						));
 					}
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> upstream/master
 					$group_exists = $queries->getWhere("groups", array("id", "=", 3));
 					if(!count($group_exists)){
 						$queries->create("groups", array(
@@ -1492,7 +2010,11 @@ if(isset($_GET["step"])){
 							'staff' => 1
 						));
 					}
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> upstream/master
 					// Create admin account
 					$user->create(array(
 						'username' => Input::get('username'),
@@ -1506,9 +2028,15 @@ if(isset($_GET["step"])){
 						'lastip' => "",
 						'active' => 1
 					));
+<<<<<<< HEAD
 					
 					$login = $user->login(Input::get('username'), Input::get('password'), true);
 					if($login) {					
+=======
+
+					$login = $user->login(Input::get('username'), Input::get('password'), true);
+					if($login) {
+>>>>>>> upstream/master
 						if(!isset($uuid_error)){
 							echo '<script>window.location.replace("./install?step=convert");</script>';
 						} else {
@@ -1519,6 +2047,7 @@ if(isset($_GET["step"])){
 						echo '<p>Sorry, there was an unknown error logging you in. <a href="/install/?step=account">Try again</a></p>';
 						die();
 					}
+<<<<<<< HEAD
 				
 				} catch(Exception $e){
 					echo "<br><div class='alert alert-danger'>".$e->getMessage()."</div>";				
@@ -1526,6 +2055,15 @@ if(isset($_GET["step"])){
 				}
 				
 				
+=======
+
+				} catch(Exception $e){
+					echo "<br><div class='alert alert-danger'>".$e->getMessage()."</div>";
+					die();
+				}
+
+
+>>>>>>> upstream/master
 			} else {
 				Session::flash('admin-acc-error', '
 						<div class="alert alert-danger">
@@ -1585,7 +2123,11 @@ if(isset($_GET["step"])){
             <hr>
             <button type="submit" class="btn btn-default">Submit</button>
 	  </form>
+<<<<<<< HEAD
 	  <?php 
+=======
+	  <?php
+>>>>>>> upstream/master
 	  } else if($_GET['step'] === "convert"){
 		if(!isset($user)){
 			$user = new User();
@@ -1614,7 +2156,11 @@ if(isset($_GET["step"])){
 			if(!Input::exists()){
 	  ?>
 			<h4>Converting from ModernBB:</h4>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 				if(isset($_GET["error"])){
 	  ?>
@@ -1624,7 +2170,11 @@ if(isset($_GET["step"])){
 	  <?php
 				}
 	  ?>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 			<form action="?step=convert&convert=yes&from=modernbb" method="post">
 			  <div class="form-group">
 			    <label for="InputDBAddress">ModernBB Database Address</label>
@@ -1651,7 +2201,11 @@ if(isset($_GET["step"])){
 			  <input class="btn btn-primary" type="submit" value="Convert">
 			  <a href="#" class="btn btn-danger" onclick="location.href='./install?step=convert&convert=yes'">Cancel</a>
 			</form>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 			} else {
 				require 'core/converters/modernbb.php';
@@ -1667,7 +2221,11 @@ if(isset($_GET["step"])){
 	  ?>
 			<h4>Converting from phpBB:</h4>
 			Coming soon. This won't work yet!
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 				if(isset($_GET["error"])){
 	  ?>
@@ -1677,7 +2235,11 @@ if(isset($_GET["step"])){
 	  <?php
 				}
 	  ?>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 			<form action="?step=convert&convert=yes&from=phpbb" method="post">
 			  <div class="form-group">
 			    <label for="InputDBAddress">phpBB Database Address</label>
@@ -1704,7 +2266,11 @@ if(isset($_GET["step"])){
 			  <input class="btn btn-primary" type="submit" value="Convert">
 			  <a href="#" class="btn btn-danger" onclick="location.href='./install?step=convert&convert=yes'">Cancel</a>
 			</form>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 			} else {
 				require 'core/converters/phpbb.php';
@@ -1715,14 +2281,22 @@ if(isset($_GET["step"])){
 			</div>
 	  <?php
 			}
+<<<<<<< HEAD
 /* 
+=======
+/*
+>>>>>>> upstream/master
  * ---- NEW, By dwilson390 -----
  */
 		} else if(strtolower($_GET["from"]) === "wordpress"){
 			if(!Input::exists()){
 	  ?>
 			<h4>Converting from WordPress:</h4>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 				if(isset($_GET["error"])){
 	  ?>
@@ -1734,7 +2308,11 @@ if(isset($_GET["step"])){
 	  ?>
 			<div class="alert alert-success">
 				WordPress conversion script created by dwilson390.<br />
+<<<<<<< HEAD
 			</div>	
+=======
+			</div>
+>>>>>>> upstream/master
 			<form action="?step=convert&convert=yes&from=wordpress" method="post">
 			  <div class="form-group">
 			    <label for="InputDBAddress">Wordpress Database Address</label>
@@ -1765,7 +2343,11 @@ if(isset($_GET["step"])){
 			  <input class="btn btn-primary" type="submit" value="Convert">
 			  <a href="#" class="btn btn-danger" onclick="location.href='./install?step=convert&convert=yes'">Cancel</a>
 			</form>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 			} else {
 				require 'core/converters/wordpress.php';
@@ -1776,7 +2358,11 @@ if(isset($_GET["step"])){
 			</div>
 	  <?php
 			}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 /*
  * ---- END, By dwilson390 -----
  */
@@ -1789,7 +2375,11 @@ if(isset($_GET["step"])){
 			if(!Input::exists()){
 	  ?>
 			<h4>Converting from XenForo:</h4>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 				if(isset($_GET["error"])){
 	  ?>
@@ -1799,7 +2389,11 @@ if(isset($_GET["step"])){
 	  <?php
 				}
 	  ?>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 			<form action="?step=convert&convert=yes&from=xenforo" method="post">
 			  <div class="form-group">
 			    <label for="InputDBAddress">XenForo Database Address</label>
@@ -1822,7 +2416,11 @@ if(isset($_GET["step"])){
 			  <input class="btn btn-primary" type="submit" value="Convert">
 			  <a href="#" class="btn btn-danger" onclick="location.href='./install?step=convert&convert=yes'">Cancel</a>
 			</form>
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> upstream/master
 	  <?php
 			} else {
 				require 'core/converters/xenforo.php';
@@ -1880,10 +2478,17 @@ if(isset($_GET["step"])){
       </footer>
     </div> <!-- /container -->
 
+<<<<<<< HEAD
 	<?php 
 	if($step === "start"){ 
 	?>
 	
+=======
+	<?php
+	if($step === "start"){
+	?>
+
+>>>>>>> upstream/master
     <div class="modal fade" id="bungee_plugins" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -1902,7 +2507,11 @@ if(isset($_GET["step"])){
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
     <div class="modal fade" id="mc_plugins" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -1952,7 +2561,11 @@ if(isset($_GET["step"])){
 	<?php
 	}
 	?>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

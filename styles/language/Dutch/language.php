@@ -39,14 +39,22 @@ $admin_language = array(
     'index' => 'Overzicht',
     'announcements' => 'Aankondigingen',
     'core' => 'Kern',
+<<<<<<< HEAD
     'custom_pages' => 'Aangepaste pagina\'s',
+=======
+    'custom_pages' => 'Zelf gemaakte pagina\'s',
+>>>>>>> upstream/master
     'general' => 'Algemeen',
     'forums' => 'Forums',
     'users_and_groups' => 'Gebruikers en Groepen',
     'minecraft' => 'Minecraft',
     'style' => 'Stijl',
     'addons' => 'Uitbreidingen',
+<<<<<<< HEAD
     'update' => 'Update',
+=======
+    'update' => 'Bijwerken',
+>>>>>>> upstream/master
     'misc' => 'Overig',
     'help' => 'Help',
      
@@ -60,7 +68,11 @@ $admin_language = array(
     'announcement_content' => 'Inhoud Aankondiging',
     'announcement_location' => 'Locatie Aankondiging',
     'announcement_can_close' => 'Aankondiging weg te klikken?',
+<<<<<<< HEAD
     'announcement_permissions' => 'Aankondiging permissies',
+=======
+    'announcement_permissions' => 'Aankondiging toestemmingen',
+>>>>>>> upstream/master
     'no_announcements' => 'Nog geen aankondigingen gemaakt.',
     'confirm_cancel_announcement' => 'Weet je zeker dat je deze aankondiging wilt annuleren?',
     'announcement_location_help' => 'Ctrl-klik om meerdere pagina\'s te selecteren.',
@@ -96,7 +108,11 @@ $admin_language = array(
     'explain_email_settings' => 'Het volgende is benodigd als de functie: "Gebruik PHP mail()" is <strong>uitgeschakeld</strong>.Je kan de documentatie over de instellingen vinden <a href="https://github.com/NamelessMC/Nameless/wiki/Setting-up-Gmail-or-SMTP-with-Nameless" target="_blank">op onze wiki</a>.',
     'email_config_not_writable' => 'Je <strong>core/email.php</strong> kon niet worden aangepast. Bekijk je bestandspermissies (777).',
     'pages' => 'Pagina\'s',
+<<<<<<< HEAD
     'enable_or_disable_pages' => 'Schakel pagina\'s hier in en uit .',
+=======
+    'enable_or_disable_pages' => 'Schakel pagina\'s hier in en uit.',
+>>>>>>> upstream/master
     'enable' => 'Klik om in te schakelen',
     'disable' => 'Klik om uit te schakelen',
     'maintenance_mode' => 'Forum onderhoud modus',
@@ -142,6 +158,15 @@ $admin_language = array(
     'text' => 'Tekstlijn',
     'textarea' => 'Tekstblok',
     'question_deleted' => 'Vraag verwijderd',
+<<<<<<< HEAD
+=======
+	'name_required' => 'Naam is verplicht.',
+	'question_required' => 'Vraag is verplicht.',
+	'name_minimum' => 'Naam moet uit miniamaal 2 karakters bestaan.',
+	'question_minimum' => 'Vraag moet uit miniamaal 2 karakters bestaan.',
+	'name_maximum' => 'Naam moet uit maximaal 16 karakters bestaan.',
+	'question_maximum' => 'Vraag moet uit maximaal 16 karakters bestaan.',
+>>>>>>> upstream/master
     'use_followers' => 'Gebruik volgers?',
     'use_followers_help' => 'Als dit is uitgeschakeld dan wordt het vrienden systeem ingeschakeld',
      
@@ -223,7 +248,11 @@ $admin_language = array(
     'created' => 'Aangemaakt',
     'user_deleted' => 'Gebruiker Verwijderd',
     'validate_user' => 'Bevestigde Gebruiker',
+<<<<<<< HEAD
     'update_uuid' => 'Update UUID',
+=======
+    'update_uuid' => 'UUID bijwerken',
+>>>>>>> upstream/master
     'unable_to_update_uuid' => 'De UUID kan niet worden bijgewerkt.',
     'update_mc_name' => 'Update Minecraft Naam',
     'reset_password' => 'Reset Wachtwoord',
@@ -238,6 +267,10 @@ $admin_language = array(
     'confirm_user_deletion' => 'Weet je zeker dat je de gebruiker <b>{x}</b> wilt verwijderen?', // Don't replace "{x}"
     'groups' => 'Groepen',
     'group' => 'Groep',
+<<<<<<< HEAD
+=======
+    'group2' => 'Tweede Groep',
+>>>>>>> upstream/master
     'new_group' => 'Nieuwe Groep',
     'id' => 'ID',
     'name' => 'Naam',
@@ -289,7 +322,11 @@ $admin_language = array(
     'pre_17' => 'Lager dan Minecraft versie 1.7?',
     'server_name' => 'Servernaam',
     'invalid_server_id' => 'Ongeldige server ID',
+<<<<<<< HEAD
     'show_players' => 'Laat de spelers op de Play pagina zien.',
+=======
+    'show_players' => 'Laat de spelers op de Speel pagina zien.',
+>>>>>>> upstream/master
     'server_edited' => 'Server succesvol bewerkt',
     'server_created' => 'Server succesvol gemaakt',
     'query_errors' => 'Query fouten',
@@ -529,7 +566,11 @@ $user_language = array(
     'deleted_alert' => 'Melding is succesvol verwijderd',
      
     // Warnings
+<<<<<<< HEAD
     'you_have_received_a_warning' => 'Je heeft een waarschuwing van {x} op {y} ontvangen.', // Don't replace "{x}" or "{y}"
+=======
+    'you_have_received_a_warning' => 'Je hebt een waarschuwing ontvangen van {x} op {y}.', // Don't replace "{x}" or "{y}"
+>>>>>>> upstream/master
     'acknowledge' => 'Dit Klopt',
      
     // Forgot password
@@ -616,8 +657,13 @@ $mod_language = array(
     'punished_successfully' => 'Straf succesvol toegevoegd.',
 
     // Reports
+<<<<<<< HEAD
     'report_closed' => 'Rapport Gesloten.',
     'new_comment' => 'Nieuw Commentaar',
+=======
+    'report_closed' => 'Rapport gesloten.',
+    'new_comment' => 'Nieuw commentaar',
+>>>>>>> upstream/master
     'comments' => 'Commentaar',
     'only_viewed_by_staff' => 'Kan alleen worden bekeken door staff',
     'reported_by' => 'Gerapporteerd door',
@@ -625,11 +671,19 @@ $mod_language = array(
     'report' => 'Report:',
     'view_reported_content' => 'Bekijk gemelde inhoud',
     'no_open_reports' => 'Geen open rapporten',
+<<<<<<< HEAD
     'user_reported' => 'Speler Gerapporteerd',
     'type' => 'Type',
     'updated_by' => 'Bijgewerkt Door',
     'forum_post' => 'Forum Post',
     'user_profile' => 'Gebruikers Profiel',
+=======
+    'user_reported' => 'Speler gerapporteerd',
+    'type' => 'Type',
+    'updated_by' => 'Bijgewerkt door',
+    'forum_post' => 'Forum post',
+    'user_profile' => 'Gebruikers profiel',
+>>>>>>> upstream/master
     'comment_added' => 'Commentaar toegevoegd.',
     'new_report_submitted_alert' => 'Nieuw rapport ingediend door {x} over {y}', // Don't replace "{x}" or "{y}"
     'ingame_report' => 'In-game rapport',
@@ -686,6 +740,10 @@ $general_language = array(
     'queried_in' => 'Opgevraagd In:',
     'server_status' => 'Server Status',
     'no_players_online' => 'Er zijn geen spelers online!',
+<<<<<<< HEAD
+=======
+	'1_player_online' => 'Er is 1 speler online.',
+>>>>>>> upstream/master
     'x_players_online' => 'Er zijn {x} spelers online.', // Don't replace {x}
      
     // Other
@@ -757,8 +815,13 @@ $forum_language = array(
      
     // Sticky threads
     'thread_is_' => 'Onderwerp is ',
+<<<<<<< HEAD
     'now_sticky' => 'Is nu een plakkerige onderwerp',
     'no_longer_sticky' => 'Is niet langer meer een plakkerige onderwerp',
+=======
+    'now_sticky' => 'Is nu een vastgepind onderwerp',
+    'no_longer_sticky' => 'Is niet langer meer een vastgepind onderwerp',
+>>>>>>> upstream/master
      
     // Create topic
     'topic_created' => 'Onderwerp gemaakt.',
@@ -801,7 +864,11 @@ $forum_language = array(
 $email_language = array(
     // Registration email
     'greeting' => 'Beste Gebruiker',
+<<<<<<< HEAD
     'message' => 'Bedankt voor het registreren! Om de registratie te voltooien, klikt je op de volgende link:',
+=======
+    'message' => 'Bedankt voor het registreren! Om de registratie te voltooien, klik je op de volgende link:',
+>>>>>>> upstream/master
     'thanks' => 'Bedankt,'
 );
  

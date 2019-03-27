@@ -9,7 +9,18 @@
 // Initialise the vote addon
 // We've already checked to see if it's enabled
 
+<<<<<<< HEAD
 require('addons/Vote/language.php');
+=======
+// Check language
+$c->setCache('languagecache');
+$language = $c->retrieve('language');
+
+if(file_exists('addons/Vote/' . $language . '.php'))
+	require('addons/Vote/' . $language . '.php');
+else
+	require('addons/Vote/language.php');
+>>>>>>> upstream/master
 
 // Check cache for link location
 $c->setCache('voteaddon');
@@ -45,4 +56,8 @@ switch($link_location){
 	default:
 		$navbar_array[] = array('vote' => $vote_language['vote_icon'] . $vote_language['vote']);
 	break;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/master

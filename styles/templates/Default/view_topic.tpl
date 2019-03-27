@@ -26,7 +26,13 @@
 			  <strong><a href="/profile/{$reply.mcname}">{$reply.username}</a></strong>
 			  <br />
 			  {$reply.user_group}
+<<<<<<< HEAD
 			  <br />
+=======
+			  {if !is_null($reply.user_group2)}<br />
+			  {$reply.user_group2}{/if}
+              <br />
+>>>>>>> upstream/master
 			  {$reply.user_title}
 			  <hr>
 			  {$reply.user_posts_count} {$POSTS}<br />

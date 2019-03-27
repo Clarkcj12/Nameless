@@ -85,7 +85,16 @@ if($pre17 == 0){
 	$player_count = $Info['Players'];
 }
 
+<<<<<<< HEAD
 $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_language['x_players_online']));
+=======
+if($player_count == 1)
+	$smarty->assign('PLAYERS_ONLINE', $general_language['1_player_online']);
+else if($player_count > 1)
+	$smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_language['x_players_online']));
+else
+	$smarty->assign('PLAYERS_ONLINE', $general_language['no_players_online']);
+>>>>>>> upstream/master
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -162,7 +171,17 @@ $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_lan
 	foreach($latest_news as $item){
 		// Get poster's avatar
 		$avatar = '<img class="img-rounded" style="width:25px; height:25px;" src="' . $user->getAvatar($item["author"], "../", 25) . '" />';
+<<<<<<< HEAD
 		
+=======
+
+		if($item['label']){
+		  $label = $queries->getWhere('forums_topic_labels', array('id', '=', $item['label']));
+		  $label = '<span class="label label-' . htmlspecialchars($label[0]->label) . '">' . htmlspecialchars($label[0]->name) . '</span>';
+    } else
+      $label = '';
+
+>>>>>>> upstream/master
 		$news[] = array(
 			'id' => $item['topic_id'],
 			'date' => date('d M Y, H:i', $item['topic_date']),
@@ -173,7 +192,12 @@ $smarty->assign('PLAYERS_ONLINE', str_replace('{x}', $player_count, $general_lan
 			'author_username' => htmlspecialchars($user->idToName($item['author'])),
 			'author_avatar' => $avatar,
 			'content' => $purifier->purify(htmlspecialchars_decode($item['content'])),
+<<<<<<< HEAD
 			'group' => $user->getGroup($item['author'], true)
+=======
+			'group' => $user->getGroup($item['author'], true),
+			'label' => $label
+>>>>>>> upstream/master
 		);
 	}
 

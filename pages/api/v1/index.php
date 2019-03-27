@@ -276,7 +276,14 @@ class NamelessAPI {
 				
 				$headers = 'From: ' . $siteemail . "\r\n" .
 					'Reply-To: ' . $siteemail . "\r\n" .
+<<<<<<< HEAD
 					'X-Mailer: PHP/' . phpversion();
+=======
+					'X-Mailer: PHP/' . phpversion() . "\r\n" .
+					'MIME-Version: 1.0' . "\r\n" . 
+					'Content-type: text/plain; charset=UTF-8' . "\r\n";
+				
+>>>>>>> upstream/master
 				mail($to, $subject, $message, $headers);
 				
 			}

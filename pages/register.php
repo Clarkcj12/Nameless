@@ -77,7 +77,10 @@ if(Input::exists()){
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+<<<<<<< HEAD
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+=======
+>>>>>>> upstream/master
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -341,7 +344,14 @@ if(Input::exists()){
 										
 										$headers = 'From: ' . $siteemail . "\r\n" .
 											'Reply-To: ' . $siteemail . "\r\n" .
+<<<<<<< HEAD
 											'X-Mailer: PHP/' . phpversion();
+=======
+											'X-Mailer: PHP/' . phpversion() . "\r\n" .
+											'MIME-Version: 1.0' . "\r\n" . 
+											'Content-type: text/plain; charset=UTF-8' . "\r\n";
+										
+>>>>>>> upstream/master
 										mail($to, $subject, $message, $headers);
 									}
 								} else {

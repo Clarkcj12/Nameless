@@ -355,6 +355,10 @@ $purifier = new HTMLPurifier($config);
 	while($n < $d){
 	  	// Get user's group HTML formatting and their signature
 	  	$user_group = $user->getGroup($posts[$n]->post_creator, "true");
+<<<<<<< HEAD
+=======
+	  	$user_group2 = $user->getGroup2($posts[$n]->post_creator, "true");
+>>>>>>> upstream/master
 		$signature = $user->getSignature($posts[$n]->post_creator);
 	
 		// Panel heading content
@@ -500,6 +504,10 @@ $purifier = new HTMLPurifier($config);
 			'username' => htmlspecialchars($post_user[0]->username),
 			'mcname' => htmlspecialchars($post_user[0]->mcname),
 			'user_group' => $user_group,
+<<<<<<< HEAD
+=======
+			'user_group2' => $user_group2,
+>>>>>>> upstream/master
 			'user_title' => htmlspecialchars($post_user[0]->user_title),
 			'user_posts_count' => count($queries->getWhere('posts', array('post_creator', '=', $posts[$n]->post_creator))),
 			'user_reputation' => $post_user[0]->reputation,

@@ -136,6 +136,15 @@ $admin_language = array(
 	'text' => '文字',
 	'textarea' => '文字區塊',
 	'question_deleted' => '問題已刪除',
+<<<<<<< HEAD
+=======
+	'name_required' => 'Name is required.',
+	'question_required' => 'Question is required.',
+	'name_minimum' => 'Name must be a minimum of 2 characters.',
+	'question_minimum' => 'Question must be a minimum of 2 characters.',
+	'name_maximum' => 'Name must be a maximum of 16 characters.',
+	'question_maximum' => 'Question must be a maximum of 16 characters.',
+>>>>>>> upstream/master
 	'use_followers' => '使用追隨者',
 	'use_followers_help' => '如果停用此選項，系統將會啟用好友系統。',
 	
@@ -232,6 +241,10 @@ $admin_language = array(
 	'confirm_user_deletion' => '你確定要刪除使用者「{x}」嗎？', // Don't replace "{x}"
 	'groups' => '組別',
 	'group' => '組別',
+<<<<<<< HEAD
+=======
+	'group' => '組別 2',
+>>>>>>> upstream/master
 	'new_group' => '新的組別',
 	'id' => 'ID',
 	'name' => '名稱',
@@ -680,6 +693,10 @@ $general_language = array(
 	'queried_in' => '查詢所用時間：',
 	'server_status' => '伺服器狀態',
 	'no_players_online' => '目前沒有玩家在線上。',
+<<<<<<< HEAD
+=======
+	'1_player_online' => 'There is 1 player online.',
+>>>>>>> upstream/master
 	'x_players_online' => '目前有 {x} 位玩家遊玩當中。', // Don't replace {x}
 	
 	// Other
